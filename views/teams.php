@@ -35,7 +35,7 @@ ob_start();
                                         <?= $listTeams['president'] ?>
                                     </td>
                                     <td>
-                                        <a href="<?= $listTeams['website'] ?>" class="fas fa-external-link-alt"></a>
+                                        <a href="http://<?= $listTeams['website'] ?>" class="fas fa-external-link-alt"></a>
                                     </td>
                                 </tr>
                             <?php } ?>

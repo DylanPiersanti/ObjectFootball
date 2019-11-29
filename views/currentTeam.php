@@ -47,7 +47,7 @@ ob_start();
                                     </tr>
                                     <tr>
                                         <td>Président : </td>
-                                        <td><?= $currentTeam['president'] ?></td>
+                                        <td><a href="?path=coachs&id=<?= $currentTeam['id']?>"><?= $currentTeam['president'] ?></a></td>
                                     </tr>
                                     <tr>
                                         <td>Adresse : </td>
