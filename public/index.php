@@ -8,6 +8,7 @@
     <link href="./public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="./public/css/all.min.css" rel="stylesheet">
     <link href="./public/css/style.css" rel="stylesheet">
+    <link href="./public/css/stade.css" rel="stylesheet">
     <title><?= $title ?></title>
 </head>
 
@@ -16,6 +17,10 @@
         <div class="container topSite">
             <div class="row">
                 <div class="col-4">
+$route = explode('/', substr($_SERVER['REQUEST_URI'], 1));
+array_shift($route);
+var_dump($route);
+
                     <img class="topLogo mt-2" src="./public/images/whiteLogo.png" />
                 </div>
                 <div class="socialLink col-8 text-right mt-5">
