@@ -47,7 +47,7 @@ ob_start();
                                     </tr>
                                     <tr>
                                         <td>Président : </td>
-                                        <td><a href="?path=coachs&id=<?= $currentTeam['id'] ?>"><?= $currentTeam['president'] ?></a></td>
+                                        <td><?= $currentTeam['president'] ?></td>
                                     </tr>
                                     <tr>
                                         <td>Adresse : </td>
@@ -81,39 +81,49 @@ ob_start();
 
     <div class="container">
         <div class="accordion" id="accordionExample">
-            
             <div class="card">
-                
+
+            </div>
+            <div class="card">
+
                 <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
                         <button class="btn btn-link text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             Composition de l'équipe
                         </button>
-                        
+
                     </h2>
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                <button class="btn btn-dark mt-5 ml-5">4-4-2</button>
-                <button class="btn btn-dark mt-5 ml-5">4-3-3</button>
-                <button class="btn btn-dark mt-5 ml-5">4-5-1</button> 
-                <section class="container">
+                    <button class="btn btn-dark mt-5 ml-5" onclick="getOneCompo()">4-4-2</button>
+                    <button class="btn btn-dark mt-5 ml-5" onclick="getTwoCompo()">4-3-3</button>
+                    <button class="btn btn-dark mt-5 ml-5" onclick="getThreeCompo()">4-5-1</button>
+                    <section class="container">
                         <div class="row">
-                            <div class="s4-4-2 col-12 mb-5 mt-5 pl-2 pr-2 stade ">
+                            <div id="s4-4-2" class="s4-4-2 col-12 mb-5 mt-5 pl-2 pr-2 stade">
                                 <?php
 
-                                $playersArray = array();
- 
+                                $playersArrayPhoto = array();
+                                $playersArrayName = array();
+
                                 foreach ($pht as $players) {
-                                    array_push($playersArray, $players['pl_photo']);
+                                    array_push($playersArrayPhoto, $players['pl_photo']);
+                                    array_push($playersArrayName, $players['pl_name']);
+                                }
+
+                                foreach ($pht as $players) {
+                                    array_push($playersArrayPhoto, $players['pl_photo']);
                                 }
 
 
                                 for ($i = 1; $i < 12; $i++) {
-                                    
+
                                     ?>
 
                                     <div class="p<?= $i ?> playerPhoto">
-                                        <img src="<?= $playersArray[$i] ?>" />
+                                        <button type="button" class="btn btn-lg" data-toggle="popover" title="<?= $playersArrayName[$i] ?>">
+                                            <img class="animated bounceIn" src="<?= $playersArrayPhoto[$i] ?>" />
+                                        </button>
                                     </div>
 
                                 <?php
@@ -124,22 +134,26 @@ ob_start();
                         </div>
 
                         <div class="row">
-                            <div class="col-12 mb-5 mt-5 pl-2 pr-2 stade ">
+                            <div id="s4-3-3" class="s4-3-3 col-12 mb-5 mt-5 pl-2 pr-2 stade ">
                                 <?php
 
-                                $playersArray = array();
- 
+                                $playersArrayPhoto = array();
+                                $playersArrayName = array();
+
                                 foreach ($pht as $players) {
-                                    array_push($playersArray, $players['pl_photo']);
+                                    array_push($playersArrayPhoto, $players['pl_photo']);
+                                    array_push($playersArrayName, $players['pl_name']);
                                 }
 
 
                                 for ($i = 1; $i < 12; $i++) {
-                                    
+
                                     ?>
 
                                     <div class="g<?= $i ?> playerPhoto">
-                                        <img src="<?= $playersArray[$i] ?>" />
+                                        <button type="button" class="btn btn-lg" data-toggle="popover" title="<?= $playersArrayName[$i] ?>">
+                                            <img class="animated bounceIn" src="<?= $playersArrayPhoto[$i] ?>" />
+                                        </button>
                                     </div>
 
                                 <?php
@@ -148,6 +162,37 @@ ob_start();
                                 <img src="./public/images/stadium.png" alt="" class="img-fluid">
                             </div>
                         </div>
+
+                        <div class="row">
+                            <div id="s4-5-1" class="s4-5-1 col-12 mb-5 mt-5 pl-2 pr-2 stade ">
+                                <?php
+
+                                $playersArrayPhoto = array();
+                                $playersArrayName = array();
+
+                                foreach ($pht as $players) {
+                                    array_push($playersArrayPhoto, $players['pl_photo']);
+                                    array_push($playersArrayName, $players['pl_name']);
+                                }
+
+
+                                for ($i = 1; $i < 12; $i++) {
+
+                                    ?>
+
+                                    <div class="h<?= $i ?> playerPhoto">
+                                        <button type="button" class="btn btn-lg" data-toggle="popover" title="<?= $playersArrayName[$i] ?>">
+                                            <img class="animated bounceIn" src="<?= $playersArrayPhoto[$i] ?>" />
+                                        </button>
+                                    </div>
+
+                                <?php
+                                }
+                                ?>
+                                <img src="./public/images/stadium.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+
                     </section>
                 </div>
             </div>

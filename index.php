@@ -17,14 +17,12 @@ switch ($path) {
 
     case 'teams':
         $teams = new TeamsController;
-        
+
 
         if (isset($_GET['id'])) {
             $teams->currentTeam($_GET['id']);
-            
         } else {
             $teams->listTeams();
-            
         }
         break;
 
@@ -35,6 +33,10 @@ switch ($path) {
         } else {
             $coachs->listCoachs();
         }
+        break;
+    case 'myTeam':
+        $myPlayers = new MyTeamController;
+        $myPlayers->listPlayers();
         break;
 
     default:

@@ -7,8 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="./public/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="./public/css/all.min.css" rel="stylesheet">
+    <link href="./public/css/animate.css" rel="stylesheet">
     <link href="./public/css/style.css" rel="stylesheet">
     <link href="./public/css/stade.css" rel="stylesheet">
+    <link href="./public/css/myTeam.css" rel="stylesheet">
+
     <title><?= $title ?></title>
 </head>
 
@@ -17,10 +20,6 @@
         <div class="container topSite">
             <div class="row">
                 <div class="col-4">
-$route = explode('/', substr($_SERVER['REQUEST_URI'], 1));
-array_shift($route);
-var_dump($route);
-
                     <img class="topLogo mt-2" src="./public/images/whiteLogo.png" />
                 </div>
                 <div class="socialLink col-8 text-right mt-5">
@@ -57,6 +56,11 @@ var_dump($route);
                         <li class="nav-item">
                             <a class="nav-link" href="?path=coachs">
                                 Les coatchs
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="?path=myTeam">
+                                Mon équipe
                             </a>
                         </li>
                     </ul>
@@ -115,6 +119,8 @@ var_dump($route);
         </div>
     </section>
 
+    <script src="./public/js/app.js"></script>
+    <script src="./public/js/yourTeam.js"></script>
     <script src="./public/jquery/jquery.min.js"></script>
     <script src="./public/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>

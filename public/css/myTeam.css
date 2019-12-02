@@ -1,0 +1,5 @@
+.playerList {
+    height: 300px;
+    overflow: auto;
+    border: 2px solid #fff;
+}
