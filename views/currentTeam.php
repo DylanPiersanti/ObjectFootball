@@ -81,36 +81,67 @@ ob_start();
 
     <div class="container">
         <div class="accordion" id="accordionExample">
+            
             <div class="card">
+                
                 <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
                         <button class="btn btn-link text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             Composition de l'équipe
                         </button>
+                        
                     </h2>
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                    <section class="container">
+                <button class="btn btn-dark mt-5 ml-5">4-4-2</button>
+                <button class="btn btn-dark mt-5 ml-5">4-3-3</button>
+                <button class="btn btn-dark mt-5 ml-5">4-5-1</button> 
+                <section class="container">
                         <div class="row">
-                            <div class="col-12 mb-5 mt-5 pl-2 pr-2 stade">
+                            <div class="s4-4-2 col-12 mb-5 mt-5 pl-2 pr-2 stade ">
                                 <?php
 
                                 $playersArray = array();
-
+ 
                                 foreach ($pht as $players) {
-                                    array_push($playersArray, $players['pl_name']);
+                                    array_push($playersArray, $players['pl_photo']);
                                 }
 
-                                $test = array_keys($playersArray);
-                                $i = 0;
 
-                                for ($i; $i < 12; $i++) {
-
+                                for ($i = 1; $i < 12; $i++) {
+                                    
                                     ?>
 
-                                    <div class="p<?= $i ?>">
-                                    
+                                    <div class="p<?= $i ?> playerPhoto">
+                                        <img src="<?= $playersArray[$i] ?>" />
                                     </div>
+
+                                <?php
+                                }
+                                ?>
+                                <img src="./public/images/stadium.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 mb-5 mt-5 pl-2 pr-2 stade ">
+                                <?php
+
+                                $playersArray = array();
+ 
+                                foreach ($pht as $players) {
+                                    array_push($playersArray, $players['pl_photo']);
+                                }
+
+
+                                for ($i = 1; $i < 12; $i++) {
+                                    
+                                    ?>
+
+                                    <div class="g<?= $i ?> playerPhoto">
+                                        <img src="<?= $playersArray[$i] ?>" />
+                                    </div>
+
                                 <?php
                                 }
                                 ?>
@@ -125,16 +156,6 @@ ob_start();
     </div>
 </main>
 
-                                    <!-- <div class="p2"></div>
-                                    <div class="p3"></div>
-                                    <div class="p4"></div>
-                                    <div class="p5"></div>
-                                    <div class="p6"></div>
-                                    <div class="p7"></div>
-                                    <div class="p8"></div>
-                                    <div class="p9"></div>
-                                    <div class="p10"></div>
-                                    <div class="p11"></div> -->
 <?php
 
 $content = ob_get_clean();
