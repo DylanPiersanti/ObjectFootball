@@ -84,8 +84,8 @@ ob_start();
             <div class="card">
                 <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Collapsible Group Item #3
+                        <button class="btn btn-link text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Composition de l'équipe
                         </button>
                     </h2>
                 </div>
@@ -93,28 +93,50 @@ ob_start();
                     <section class="container">
                         <div class="row">
                             <div class="col-12 mb-5 mt-5 pl-2 pr-2 stade">
-                                <div class="p1"></div>
-                                <div class="p2"></div>
-                                <div class="p3"></div>
-                                <div class="p4"></div>
-                                <div class="p5"></div>
-                                <div class="p6"></div>
-                                <div class="p7"></div>
-                                <div class="p8"></div>
-                                <div class="p9"></div>
-                                <div class="p10"></div>
-                                <div class="p11"></div>
+                                <?php
+
+                                $playersArray = array();
+
+                                foreach ($pht as $players) {
+                                    array_push($playersArray, $players['pl_name']);
+                                }
+
+                                $test = array_keys($playersArray);
+                                $i = 0;
+
+                                for ($i; $i < 12; $i++) {
+
+                                    ?>
+
+                                    <div class="p<?= $i ?>">
+                                    
+                                    </div>
+                                <?php
+                                }
+                                ?>
                                 <img src="./public/images/stadium.png" alt="" class="img-fluid">
                             </div>
                         </div>
                     </section>
                 </div>
             </div>
+            <br />
         </div>
     </div>
 </main>
 
+                                    <!-- <div class="p2"></div>
+                                    <div class="p3"></div>
+                                    <div class="p4"></div>
+                                    <div class="p5"></div>
+                                    <div class="p6"></div>
+                                    <div class="p7"></div>
+                                    <div class="p8"></div>
+                                    <div class="p9"></div>
+                                    <div class="p10"></div>
+                                    <div class="p11"></div> -->
 <?php
+
 $content = ob_get_clean();
 require('public/index.php');
 ?>

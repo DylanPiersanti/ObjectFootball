@@ -14,7 +14,10 @@ class TeamsController extends Controller
     public function currentTeam($id) {
         $teamsModel = new TeamsModel;
         $currentTeam = $teamsModel->showTeam($id);
+        $playersHT = new PlayersModel;
+        $pht = $playersHT->playersHasTeams($id);
         require('views/currentTeam.php');
+
     }
 
 }
