@@ -95,7 +95,7 @@
 
     <?= $content ?>
 
-    <section id="footer">
+    <footer id="footer">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
@@ -117,7 +117,7 @@
                 </hr>
             </div>
         </div>
-    </section>
+</footer>
 
     <script src="./public/js/app.js"></script>
     <script src="./public/js/yourTeam.js"></script>
